@@ -63,11 +63,11 @@ r_dat %>%
 
 r_dat %>% 
   mutate(r_error = dat-mean(dat),    # mutate = anomaly values 
-  r_error_square = r_error * r_error %>% 
+         r_error_square = r_error * r_error) %>%
   summarise(r_square_sum = sum(r_error_square),
-            r_var = r_square_sum/n()-1))
-# or
-r_var_func = var(dat)
+                     r_var = r_square_sum/(n()-1),
+            # or
+            r_var_func = var(dat)
   
 # the Standard Deviation
 r_dat %>%  
@@ -121,7 +121,7 @@ sa_time <- sa_time %>%
 
 #wide values convert to long data format
 sa_long <- sa_time %>% 
-  gather(key = "time_type", value = "minutes", -human)  #key = name of column with combined columns
+  gather(key = "time_type", value = "minutes", -human, -geo)  #key = name of column with combined columns
 
 
 # Qualitative -------------------------------------------------------------
