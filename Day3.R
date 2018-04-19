@@ -342,10 +342,6 @@ compare_means(value ~ site, data = ecklonia_sub, method = "t.test", var.equal = 
 # We reject the null hypothesis that stipe length is greater at St. James than at Oudekraal. 
 # Stipe length (cm) of Ecklonia maxima was found to be significantly greater at St. James than at Oudekraal.
 # (p = 0.00, t = -4.16, df = 24).
- 
- 
- 
- 
- 
+
  
  
