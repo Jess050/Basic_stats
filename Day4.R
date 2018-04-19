@@ -13,7 +13,6 @@
 # load data  --------------------------------------------------------------
 
 library(tidyverse)
-library(ggplot2)
 library(pgirmess)
 
 # t-test ------------------------------------------------------------------
@@ -101,6 +100,7 @@ ggplot(chick_tukey, aes(x = pairs, y  = diff))+
   geom_point(aes(colour = pairs)) +
   geom_hline(aes(yintercept = 0), colour = "red", linetype = "dashed")+
   theme_bw()
+# RWS: Very nice!
 
 #  videos  ----------------------------------------------------------------
 
