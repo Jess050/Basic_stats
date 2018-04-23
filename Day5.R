@@ -364,8 +364,16 @@ corrplot(ecklonia_pearson, method = "circle")
 # still to do
 # heatmap
 
+# Heatmap  ----------------------------------------------------------------
 
+library(reshape2)
 
+melt.eck <- melt(ecklonia_pearson)
+
+ggplot(melt.eck, aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient(low = "white", high = "darkorchid3", name = "Pearson Correlation") +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, size = 12, hjust = 1))
 
 
 
