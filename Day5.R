@@ -14,7 +14,7 @@
 
 library(tidyverse)
 library(pgirmess)
-library(Rmisc)
+# library(Rmisc) # Unfortunately this overrides many dplyr functions
 
 # load data 
 snakes <- read_csv("snakes.csv") %>% 
@@ -47,7 +47,7 @@ snakes_summary <- snakes %>%
 
 # Rmisc package
 # first calculate CI (confidence interval) and SE (standard error)
-snakes.summary2 <- summarySE(data = snakes,
+snakes.summary2 <- Rmisc::summarySE(data = snakes,
                              measurevar = "openings",
                              groupvars = c("day"))
 
@@ -143,7 +143,7 @@ moths_summary <- moths %>%
 #  test the hypothesis  ---------------------------------------------------
 
 # first calculate CI (confidence interval) and SE (standard error)
-moths.summary2 <- summarySE(data = moths,
+moths.summary2 <- Rmisc::summarySE(data = moths,
                              measurevar = "count",
                              groupvars = c("Location"))
 
